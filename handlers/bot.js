@@ -15,7 +15,7 @@ module.exports = {
     },
 
     help: (obj, arg) => {
-        if (arg !== undefined) {
+        if (arg !== undefined && arg !== '') {
             for (let k in helpFile) {
                 helpFile[k].forEach(cmd => {
                     if (cmd.cmd === arg) {
