@@ -2,7 +2,7 @@
 RCON administration for your Squad server via Discord.
 
 # Commands
-- !bot help
+- !bot help `{Command (optional)}`
 - !bot clear
 - !match broadcast `{Message}`
 - !match restart 
