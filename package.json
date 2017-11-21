@@ -1,0 +1,20 @@
+{
+  "name": "squad-discord-admin",
+  "version": "1.0.0",
+  "description": "A Squad RCON bot for Discord",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Christopher West",
+    "email": "9ninemind@gmail.io",
+    "url": "https://github.com/ninemind"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.2.1",
+    "rcon": "^1.0.3",
+    "request": "^2.83.0"
+  }
+}

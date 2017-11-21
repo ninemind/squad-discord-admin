@@ -1,0 +1,16 @@
+{
+  "prefix": "!",
+  "discord": {
+    "token": "BOT_TOKEN",
+    "channel": "CHANNEL_ID"
+  },
+  "rcon": {
+    "host": "127.0.0.1",
+    "port": 21114,
+    "password": "SOME_PASSWORD",
+    "options": {
+      "tcp": true,
+      "challenge": false
+    }
+  }
+}
