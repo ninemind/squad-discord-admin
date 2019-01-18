@@ -4,16 +4,9 @@ RCON administration for your Squad server via Discord.
 # Commands
 - !bot help `{Command (optional)}`
 - !bot clear
-- !match broadcast `{Message}`
-- !match restart 
-- !match end
-- !map list 
-- !map change `{MapName}`
-- !map next `{MapName}`
-- !player list 
-- !player ban `{Name, SteamId, or PlayerId}` `{BanLength}` `{Reason}`
-- !player kick `{Name, SteamId, or PlayerId}` `{Reason}`
-- !player swap `{Name, SteamId, or PlayerId}`
+- !pubg track `{PlayerName}`
+- !pubg lastMatch 
+- !pubg followMatches
 
 # Installation
 
