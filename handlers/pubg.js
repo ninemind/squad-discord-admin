@@ -99,7 +99,6 @@ module.exports = {
                                     totalTeams = body.included.filter(o => o.type === 'roster').length;
 
                                 let thumbnail = null;
-                                console.log(body.data.attributes.mapName);
                                 switch (body.data.attributes.mapName) {
                                     case 'Savage_Main':
                                         thumbnail = 'https://www.pubgmap.com/images/pubgmap-savage-500x500.jpg';
@@ -132,19 +131,25 @@ module.exports = {
                                 ;
 
                                 teammates.forEach((teammate) => {
-                                    embed
-                                        .addField(teammate.attributes.stats.name, "```\n" +
-                                            'Kills:             ' + teammate.attributes.stats.kills + "\n" +
-                                            'Assists:           ' + teammate.attributes.stats.assists + "\n" +
-                                            'Headshots:         ' + teammate.attributes.stats.headshotKills + "\n" +
-                                            'Damage Dealt:      ' + Math.round(teammate.attributes.stats.damageDealt) + "\n" +
-                                            'Longest Kill:      ' + teammate.attributes.stats.longestKill.toFixed(2) + "m\n" +
-                                            'Revives:           ' + teammate.attributes.stats.revives + "\n\n" +
-                                            "```"
-                                            , true)
-                                    ;
-                                });
+                                    let survived = moment.duration(teammate.attributes.stats.timeSurvived * 1000),
+                                        fields = {
+                                            Survived:       survived.humanize(),
+                                            Knocked:        teammate.attributes.stats.DBNOs,
+                                            Kills:          teammate.attributes.stats.kills,
+                                            Assists:        teammate.attributes.stats.assists,
+                                            Headshots:      teammate.attributes.stats.headshotKills,
+                                            'Damage Dealt': Math.round(teammate.attributes.stats.damageDealt),
+                                            'Longest Kill': teammate.attributes.stats.longestKill.toFixed(2),
+                                            Revives:        teammate.attributes.stats.revives
+                                        };
 
+                                    let fieldData = '';
+                                    for (let property in fields) {
+                                        fieldData += (property + ': ').padEnd(18, ' ') + fields[property] + "\n";
+                                    }
+
+                                    embed.addField(teammate.attributes.stats.name, "```\n" + fieldData + "```", true);
+                                });
 
                                 obj.message.channel.send({embed});
                             });
