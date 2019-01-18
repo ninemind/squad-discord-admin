@@ -1,5 +1,5 @@
-# Squad Discord Admin
-RCON administration for your Squad server via Discord.
+# Match Bot (PUBG)
+A bot that logs post-match data to discord.
 
 # Commands
 - !bot help `{Command (optional)}`
