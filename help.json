@@ -8,77 +8,21 @@
       "cmd": "help"
     }
   ],
-  "match": [
+  "pubg": [
     {
-      "cmd": "broadcast",
+      "cmd": "track",
       "params": [
-        "Message"
+        "PlayerName"
       ],
-      "help": "Sends a `Message` to all players in the server.",
-      "example": "Please stop the retaliation teamkills!"
+      "help": "Adds `PlayerName` to PUBG tracking."
     },
     {
-      "cmd": "restart",
-      "help": "Restarts the current match."
+      "cmd": "lastMatch",
+      "help": "Show the last played match if it hasn't been shown already."
     },
     {
-      "cmd": "end",
-      "help": "Ends the current match."
-    }
-  ],
-  "map": [
-    {
-      "cmd": "list",
-      "help": "Lists all map names."
-    },
-    {
-      "cmd": "change",
-      "params": [
-        "MapName"
-      ],
-      "help": "Changes to the given `MapName` immediately.",
-      "example": "Mestia AAS v2"
-    },
-    {
-      "cmd": "next",
-      "params": [
-        "MapName"
-      ],
-      "help": "Changes to the given `MapName` when the current match ends.",
-      "example": "Mestia AAS v2"
-    }
-  ],
-  "player": [
-    {
-      "cmd": "list",
-      "help": "Lists all currently active and recently disconnected players."
-    },
-    {
-      "cmd": "ban",
-      "params": [
-        "Name, SteamId, or PlayerId",
-        "BanLength",
-        "Reason"
-      ],
-      "help": "Bans a player from the server for the given `BanLength` (0 = Permanent, 1D = 1 Day, 1M = 1 Month) by `Name, SteamId, or PlayerId`. If using the players `Name`, separate from the `Reason` using quotes.\nUse the `list` command to get a list of all active and recently disconnected players.",
-      "example": "\"Da Killer\" hacking"
-    },
-    {
-      "cmd": "kick",
-      "params": [
-        "Name, SteamId, or PlayerId",
-        "Reason"
-      ],
-      "help": "Kicks a player from the server by `Name, SteamId, or PlayerId`. If using the players `Name`, separate from the `Reason` using quotes.\nUse the `list` command to get a list of all active players.",
-      "example": "\"Da Killer\" intentional teamkilling"
-    },
-    {
-      "cmd": "swap",
-      "params": [
-        "Name, SteamId, or PlayerId"
-      ],
-      "help": "Swaps a player to the other team by `Name, SteamId, or PlayerId`.\nUse the `list` command to get a list of all active players.",
-      "example": "Da Killer"
+      "cmd": "followMatches",
+      "help": "Automatically add the last played match when it completes."
     }
   ]
 }

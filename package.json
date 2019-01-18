@@ -1,7 +1,7 @@
 {
-  "name": "squad-discord-admin",
+  "name": "matchbot-discord",
   "version": "1.0.0",
-  "description": "A Squad RCON bot for Discord",
+  "description": "A post-game bot for Discord",
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,8 +13,9 @@
   },
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.2.1",
-    "rcon": "^1.0.3",
-    "request": "^2.83.0"
+    "discord.js": "^11.4.2",
+    "moment": "^2.22.2",
+    "request": "^2.88.0",
+    "sqlite3": "^4.0.2"
   }
 }
