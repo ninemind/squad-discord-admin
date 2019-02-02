@@ -63,6 +63,8 @@ module.exports = {
                         .send('Successfully tracking player: ' + playerName)
                         .then(message => console.log(message.content))
                         .catch(console.error);
+
+                    module.exports.followMatches(obj);
                 }
             });
         });
