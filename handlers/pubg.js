@@ -52,8 +52,6 @@ module.exports = {
 
     track: (obj, playerName) => {
         call('players?filter[playerNames]=' + playerName, (body) => {
-            // TODO: force untrack of previous pubgId first?
-
             db.run("INSERT INTO pubg (discordId, pubgId) VALUES (?, ?)", [
                 obj.message.author.id,
                 body.data[0].id
@@ -75,7 +73,7 @@ module.exports = {
             module.exports.lastMatch(obj, args);
 
             // TODO cancel interval if it fails
-        }, 60 * 1000);
+        }, 15 * 1000);
     },
 
     lastMatch: (obj, args) => {
@@ -111,6 +109,7 @@ module.exports = {
                                         break;
 
                                     case 'Miramar_Main':
+                                    case 'Desert_Main':
                                         thumbnail = 'https://www.pubgmap.com/images/pubgmap-miramar-500x500.jpg';
                                         break;
 
@@ -136,18 +135,18 @@ module.exports = {
                                     let survived = moment.duration(teammate.attributes.stats.timeSurvived * 1000),
                                         fields = {
                                             Survived:       survived.humanize(),
-                                            Knocked:        teammate.attributes.stats.DBNOs,
+                                            Knocks:         teammate.attributes.stats.DBNOs,
                                             Kills:          teammate.attributes.stats.kills,
                                             Assists:        teammate.attributes.stats.assists,
                                             Headshots:      teammate.attributes.stats.headshotKills,
                                             'Damage Dealt': Math.round(teammate.attributes.stats.damageDealt),
-                                            'Longest Kill': teammate.attributes.stats.longestKill.toFixed(2),
+                                            'Longest Kill': teammate.attributes.stats.longestKill.toFixed(2) + 'm',
                                             Revives:        teammate.attributes.stats.revives
                                         };
 
                                     let fieldData = '';
                                     for (let property in fields) {
-                                        fieldData += (property + ': ').padEnd(18, ' ') + fields[property] + "\n";
+                                        fieldData += (property + ': ').padEnd(16, ' ') + fields[property] + "\n";
                                     }
 
                                     embed.addField(teammate.attributes.stats.name, "```\n" + fieldData + "```", true);

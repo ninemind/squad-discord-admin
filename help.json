@@ -1,5 +1,5 @@
 {
-  "bot": [
+  "matchbot": [
     {
       "cmd": "clear",
       "help": "Clears the last 100 messages from the current discord channel."
@@ -15,14 +15,6 @@
         "PlayerName"
       ],
       "help": "Adds `PlayerName` to PUBG tracking."
-    },
-    {
-      "cmd": "lastMatch",
-      "help": "Show the last played match if it hasn't been shown already."
-    },
-    {
-      "cmd": "followMatches",
-      "help": "Automatically add the last played match when it completes."
     }
   ]
 }

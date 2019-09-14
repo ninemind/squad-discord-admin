@@ -1,4 +1,4 @@
 module.exports = {
-    bot: require('./handlers/bot'),
+    matchbot: require('./handlers/bot'),
     pubg: require('./handlers/pubg')
 };
