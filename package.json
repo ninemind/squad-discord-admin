@@ -15,6 +15,6 @@
   "dependencies": {
     "discord.js": "^11.2.1",
     "rcon": "^1.0.3",
-    "request": "^2.83.0"
+    "request": "^2.88.2"
   }
 }
